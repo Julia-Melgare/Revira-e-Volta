@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: c42c7a24a96b5d54ea56408176dad7a6
+guid: d311d89bae788df4b92724fa13450664
 ModelImporter:
   serializedVersion: 21100
   internalIDToNameTable: []
@@ -7,8 +7,13 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Ouro
-    second: {fileID: 2100000, guid: d0480cb50974cd241bf34e8765f884c6, type: 2}
+      name: Churrasqueira
+    second: {fileID: 2100000, guid: 0e214275a319d3a449aa4c676f6b0284, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Metal
+    second: {fileID: 2100000, guid: 274da830e5353b0479f589e42a74c2f7, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: c42c7a24a96b5d54ea56408176dad7a6
+guid: 404fd6f93d5a1df42813bb0dcf83a8a4
 ModelImporter:
   serializedVersion: 21100
   internalIDToNameTable: []
@@ -7,8 +7,43 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: Cuia
+    second: {fileID: 2100000, guid: 044aab1ebcb94a944a85679b2b44e166, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Erva
+    second: {fileID: 2100000, guid: 81fef77fee48db74d84898fe2be56017, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Metal
+    second: {fileID: 2100000, guid: 274da830e5353b0479f589e42a74c2f7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: Ouro
     second: {fileID: 2100000, guid: d0480cb50974cd241bf34e8765f884c6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Pedra
+    second: {fileID: 2100000, guid: 5fe8c2761600e244387270246d791f68, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Pedra.001
+    second: {fileID: 2100000, guid: 38976cbde6328814e9e23fde2ae6be27, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Pedra.002
+    second: {fileID: 2100000, guid: b6a53fcfaf848f946951ad11b3e6c926, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Pedra.003
+    second: {fileID: 2100000, guid: b4556be100bb911498537a3f1041232b, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
