@@ -16,6 +16,8 @@ public class LevelStateController : MonoBehaviour
     public delegate void OnStateChange(State gameState);
     public static OnStateChange onStateChange;
 
+    public delegate void OnSetTimer(float totalTime);
+    public static OnSetTimer onSetTimer;
 
     private bool playerHasObject;
 
@@ -30,7 +32,20 @@ public class LevelStateController : MonoBehaviour
     [SerializeField] private float Score;
     [SerializeField] private float Time;
 
+    private float timeRemaining;
 
+
+    private void Start()
+    {
+        timeRemaining = this.Time;
+        onSetTimer?.Invoke(this.Time);
+    }
+
+    private void Update()
+    {
+        timeRemaining -= UnityEngine.Time.deltaTime;
+        //TODO: gameover
+    }
 
     void OnEnable()
     {

@@ -3,7 +3,12 @@ guid: c42c7a24a96b5d54ea56408176dad7a6
 ModelImporter:
   serializedVersion: 21100
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Ouro
+    second: {fileID: 2100000, guid: 1a417386b21caf34fbb46660f3fbabaa, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
