@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class LevelStateController : MonoBehaviour
 {
@@ -23,6 +24,12 @@ public class LevelStateController : MonoBehaviour
 
     [SerializeField] private State gameState;
 
+    [SerializeField] private int voltaTotalObjects;
+    [SerializeField] private int currentVoltaObjects;
+
+    [SerializeField] private float Score;
+    [SerializeField] private float Time;
+
 
     private void Start()
     {
@@ -42,6 +49,7 @@ public class LevelStateController : MonoBehaviour
         {
             //END LEVEL
             Debug.Log("LEVEL END");
+            
         }
         else
         {
@@ -58,11 +66,12 @@ public class LevelStateController : MonoBehaviour
             gameState = State.Voltando;
             onStateChange?.Invoke(gameState);
         }
-        else if(gameState == State.Revirando && !isVoltaRequired)
+        else if (gameState == State.Revirando && !isVoltaRequired)
         {
             gameState = State.End;
             onStateChange?.Invoke(gameState);
         }
+
         else if (gameState == State.Voltando)
         {
             // here only case for the onboarding
@@ -70,6 +79,21 @@ public class LevelStateController : MonoBehaviour
             onStateChange?.Invoke(gameState);
         }
 
+    }
+
+    private void OnVoltaObject()
+    {
+        currentVoltaObjects++;
+
+        if (currentVoltaObjects < voltaTotalObjects)
+            return;
+
+        if(gameState == State.Voltando)
+        {
+            gameState = State.End;
+            onStateChange?.Invoke(gameState);
+        }
+        
     }
 
  
