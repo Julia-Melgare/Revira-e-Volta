@@ -43,12 +43,12 @@ public class GraberController : MonoBehaviour
 
                 joint = CreateJoint(selected, hit.point);
 
-                selected.GetComponent<Renderer>().material.color = Color.red;
+                //selected.GetComponent<Renderer>().material.color = Color.red;
             }
         }
         else if (selected)
         {
-            selected.GetComponent<Renderer>().material.color = Color.white;
+            //selected.GetComponent<Renderer>().material.color = Color.white;
             selected = null;
             Destroy(joint.gameObject);
         }
@@ -58,10 +58,10 @@ public class GraberController : MonoBehaviour
 
     private Transform CreateJoint(Rigidbody rigidbody, Vector3 attachPosition)
     {
-        GameObject g = GameObject.CreatePrimitive(PrimitiveType.Cube);
+        GameObject g = new GameObject("Attach");
         g.transform.position = attachPosition;
         //g.transform.localScale = Vector3.one / 5f;
-        g.GetComponent<Collider>().enabled = false;
+        //g.GetComponent<Collider>().enabled = false;
 
         Rigidbody r = g.AddComponent<Rigidbody>();
 
