@@ -20,6 +20,9 @@ public class GraberController : MonoBehaviour
 
     private bool mouseClick;
 
+    public delegate void OnGrabObject(GameObject selected);
+    public static event OnGrabObject onGrabObject;
+
 
     private void Awake()
     {
@@ -43,6 +46,7 @@ public class GraberController : MonoBehaviour
 
                 joint = CreateJoint(selected, hit.point);
 
+                onGrabObject?.Invoke(hit.collider.gameObject);
                 //selected.GetComponent<Renderer>().material.color = Color.red;
             }
         }
