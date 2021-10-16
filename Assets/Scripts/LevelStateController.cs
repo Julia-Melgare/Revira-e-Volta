@@ -31,10 +31,6 @@ public class LevelStateController : MonoBehaviour
     [SerializeField] private float Time;
 
 
-    private void Start()
-    {
-       
-    }
 
     void OnEnable()
     {
