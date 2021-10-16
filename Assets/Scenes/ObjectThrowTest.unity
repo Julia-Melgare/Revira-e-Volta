@@ -138,6 +138,7 @@ GameObject:
   - component: {fileID: 84653875}
   - component: {fileID: 84653874}
   - component: {fileID: 84653873}
+  - component: {fileID: 84653878}
   m_Layer: 3
   m_Name: Cube
   m_TagString: Untagged
@@ -238,6 +239,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &84653878
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 84653872}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ea65dd5d9ef35146969b2c67d648207, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  silhouetteMaterial: {fileID: 2100000, guid: c4a56a310a02db8479c8ac5817e21917, type: 2}
 --- !u!1 &404688087
 GameObject:
   m_ObjectHideFlags: 0
@@ -251,6 +265,7 @@ GameObject:
   - component: {fileID: 404688090}
   - component: {fileID: 404688089}
   - component: {fileID: 404688088}
+  - component: {fileID: 404688093}
   m_Layer: 3
   m_Name: Cube (2)
   m_TagString: Untagged
@@ -351,6 +366,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &404688093
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 404688087}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ea65dd5d9ef35146969b2c67d648207, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  silhouetteMaterial: {fileID: 2100000, guid: c4a56a310a02db8479c8ac5817e21917, type: 2}
 --- !u!1001 &571543208
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1921,7 +1949,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72c548d132833164480d6b6aa1659f8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isVoltaRequired: 1
+  isReviraRequired: 0
   gameState: 1
+  voltaTotalObjects: 0
+  currentVoltaObjects: 0
+  Score: 0
+  Time: 0
 --- !u!1001 &2027132902
 PrefabInstance:
   m_ObjectHideFlags: 0

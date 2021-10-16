@@ -19,8 +19,8 @@ public class LevelStateController : MonoBehaviour
 
     private bool playerHasObject;
 
-    private bool isVoltaRequired;
-    private bool isReviraRequired;
+    [SerializeField] private bool isVoltaRequired;
+    [SerializeField] private bool isReviraRequired;
 
     [SerializeField] private State gameState;
 

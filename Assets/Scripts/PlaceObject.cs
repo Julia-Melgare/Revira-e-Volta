@@ -6,6 +6,10 @@ public class PlaceObject : MonoBehaviour
 {
     private GameObject originalObject;
 
+    public delegate void OnGrabEnd();
+    public static OnGrabEnd onGrabEnd;
+
+
     public void setOriginalObject(GameObject originalObject)
     {
         this.originalObject = originalObject;
@@ -17,6 +21,13 @@ public class PlaceObject : MonoBehaviour
         {
             other.transform.position = gameObject.transform.position;
             other.transform.rotation = gameObject.transform.rotation;
+
+            other.attachedRigidbody.isKinematic = true;
+            other.gameObject.layer = 0;
+
+            onGrabEnd?.Invoke();
+
+            Destroy(gameObject);
         }
     }
 }

@@ -24,9 +24,21 @@ public class GraberController : MonoBehaviour
     public static event OnGrabObject onGrabObject;
 
 
+    private void OnEnable()
+    {
+        PlaceObject.onGrabEnd += GrabEnd;
+    }
+
     private void Awake()
     {
         MainCamera = Camera.main;
+    }
+
+    private void GrabEnd()
+    {
+        selected = null;
+        if(joint)
+            Destroy(joint.gameObject);
     }
 
     private void OnFire(InputValue value)
