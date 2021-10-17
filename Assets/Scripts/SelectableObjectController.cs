@@ -43,8 +43,9 @@ public class SelectableObjectController : MonoBehaviour
         if (dist > distanceThreashold)
         {
             SpawnSilhouette();
-            yield break;
         }
+
+     
 
 
         yield return CheckSpawnSilhouette();
@@ -74,6 +75,9 @@ public class SelectableObjectController : MonoBehaviour
     private void SpawnSilhouette()
     {
         silhouette = Object.Instantiate(this.gameObject);
+
+        silhouette.transform.SetParent(transform.parent);
+
 
         silhouette.transform.position = originalPosition;
         silhouette.transform.rotation = originalRotation;
