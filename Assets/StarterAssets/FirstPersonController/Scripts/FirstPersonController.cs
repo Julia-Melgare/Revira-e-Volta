@@ -67,6 +67,8 @@ namespace StarterAssets
 		private float _jumpTimeoutDelta;
 		private float _fallTimeoutDelta;
 
+		private bool _isCrouched;
+
 		private CharacterController _controller;
 		private StarterAssetsInputs _input;
 		private GameObject _mainCamera;
@@ -95,6 +97,7 @@ namespace StarterAssets
 		private void Update()
 		{
 			JumpAndGravity();
+			Crouch();
 			GroundedCheck();
 			Move();
 		}
@@ -225,6 +228,25 @@ namespace StarterAssets
 			}
 		}
 
+		private void Crouch()
+        {
+			
+
+            if (!_isCrouched && _input.crouch)
+            {
+
+				var scaleVector = new Vector3(1f, 0.5f, 1f);
+
+				transform.localScale = Vector3.Scale(transform.localScale, scaleVector);
+				_isCrouched = true;
+
+			}
+            else if(_isCrouched && !_input.crouch)
+            {
+				transform.localScale = Vector3.one * 2.5f;
+				_isCrouched = false;
+			}
+        }
 		private static float ClampAngle(float lfAngle, float lfMin, float lfMax)
 		{
 			if (lfAngle < -360f) lfAngle += 360f;
