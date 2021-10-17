@@ -24,9 +24,6 @@ public class GraberController : MonoBehaviour
 
     private bool mouseClick;
 
-    
-
-
     private void OnEnable()
     {
         PlaceObject.onGrabEnd += GrabEnd;
