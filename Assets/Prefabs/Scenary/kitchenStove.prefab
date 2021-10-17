@@ -144,7 +144,7 @@ HingeJoint:
     freeSpin: 0
   m_UseLimits: 1
   m_Limits:
-    min: -10
+    min: 0
     max: 90
     bounciness: 0.2
     bounceMinVelocity: 0.2
