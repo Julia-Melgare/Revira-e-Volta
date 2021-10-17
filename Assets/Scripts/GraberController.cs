@@ -8,6 +8,9 @@ public class GraberController : MonoBehaviour
     public delegate void OnGrabGoal();
     public static OnGrabGoal onGrabGoal;
 
+    public delegate void OnGrabObject(GameObject selected);
+    public static event OnGrabObject onGrabObject;
+
     [SerializeField] private float DragForce = 1f;
     [SerializeField] private float DampAmount = 1f;
 
@@ -20,10 +23,6 @@ public class GraberController : MonoBehaviour
     private Transform joint;
 
     private bool mouseClick;
-
-    public delegate void OnGrabObject(GameObject selected);
-    public static event OnGrabObject onGrabObject;
-
 
     private void OnEnable()
     {
@@ -57,6 +56,7 @@ public class GraberController : MonoBehaviour
                 if(hit.collider.tag == "Goal")
                 {
                     onGrabGoal?.Invoke();
+                    Destroy(hit.collider.gameObject);
                     return;
                 }
 

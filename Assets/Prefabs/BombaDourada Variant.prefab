@@ -1,0 +1,101 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!64 &6069732130479178305
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1643559916898950742}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 2571007595502146236, guid: 404fd6f93d5a1df42813bb0dcf83a8a4, type: 3}
+--- !u!1001 &9002660426005259615
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4210998538381097577, guid: c05a25773fe5aa6439de11294c3cd063,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4210998538381097577, guid: c05a25773fe5aa6439de11294c3cd063,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 10.99
+      objectReference: {fileID: 0}
+    - target: {fileID: 4210998538381097577, guid: c05a25773fe5aa6439de11294c3cd063,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 3.23
+      objectReference: {fileID: 0}
+    - target: {fileID: 4210998538381097577, guid: c05a25773fe5aa6439de11294c3cd063,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 13.27
+      objectReference: {fileID: 0}
+    - target: {fileID: 4210998538381097577, guid: c05a25773fe5aa6439de11294c3cd063,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.6057342
+      objectReference: {fileID: 0}
+    - target: {fileID: 4210998538381097577, guid: c05a25773fe5aa6439de11294c3cd063,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.22044231
+      objectReference: {fileID: 0}
+    - target: {fileID: 4210998538381097577, guid: c05a25773fe5aa6439de11294c3cd063,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.66615975
+      objectReference: {fileID: 0}
+    - target: {fileID: 4210998538381097577, guid: c05a25773fe5aa6439de11294c3cd063,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.37512994
+      objectReference: {fileID: 0}
+    - target: {fileID: 4210998538381097577, guid: c05a25773fe5aa6439de11294c3cd063,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -13.458
+      objectReference: {fileID: 0}
+    - target: {fileID: 4210998538381097577, guid: c05a25773fe5aa6439de11294c3cd063,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 89.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4210998538381097577, guid: c05a25773fe5aa6439de11294c3cd063,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 50.289
+      objectReference: {fileID: 0}
+    - target: {fileID: 7647330956136135433, guid: c05a25773fe5aa6439de11294c3cd063,
+        type: 3}
+      propertyPath: m_Name
+      value: BombaDourada
+      objectReference: {fileID: 0}
+    - target: {fileID: 7647330956136135433, guid: c05a25773fe5aa6439de11294c3cd063,
+        type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7647330956136135433, guid: c05a25773fe5aa6439de11294c3cd063,
+        type: 3}
+      propertyPath: m_TagString
+      value: Goal
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: c05a25773fe5aa6439de11294c3cd063, type: 3}
+--- !u!1 &1643559916898950742 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7647330956136135433, guid: c05a25773fe5aa6439de11294c3cd063,
+    type: 3}
+  m_PrefabInstance: {fileID: 9002660426005259615}
+  m_PrefabAsset: {fileID: 0}

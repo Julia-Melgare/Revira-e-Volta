@@ -5,10 +5,10 @@ using UnityEngine;
 public class GoalObjectController : MonoBehaviour
 {
 
-    [SerializeField] private Camera camera;
+    [SerializeField] private Camera cam;
     [SerializeField] private float movementForce;
     private bool isMovingTowardsCamera = false;
-    private Rigidbody rigidbody;
+    private Rigidbody rb;
 
     private void OnEnable()
     {
@@ -22,16 +22,17 @@ public class GoalObjectController : MonoBehaviour
 
     private void Start()
     {
-        rigidbody = gameObject.GetComponent<Rigidbody>();
+        cam = Camera.main;
+        rb = gameObject.GetComponent<Rigidbody>();
     }
 
     private void Update()
     {
         if (isMovingTowardsCamera)
         {
-            rigidbody.AddForce(camera.transform.forward * movementForce * Time.deltaTime, ForceMode.VelocityChange);
-            Debug.Log(Vector3.Distance(gameObject.transform.position, camera.transform.forward));
-            if (Vector3.Distance(gameObject.transform.position, camera.transform.forward) <= 3f)
+            rb.AddForce(cam.transform.forward * movementForce * Time.deltaTime, ForceMode.VelocityChange);
+            Debug.Log(Vector3.Distance(gameObject.transform.position, cam.transform.forward));
+            if (Vector3.Distance(gameObject.transform.position, cam.transform.forward) <= 3f)
             {
                 isMovingTowardsCamera = false;
             }

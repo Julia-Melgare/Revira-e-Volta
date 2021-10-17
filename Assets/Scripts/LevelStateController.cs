@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -21,6 +22,12 @@ public class LevelStateController : MonoBehaviour
 
     public delegate void OnGameWin(bool win);
     public static OnGameWin onGameWin;
+
+    public delegate void OnVoltaTotalObjectsReady(int value);
+    public static OnVoltaTotalObjectsReady onVoltaTotalObjReady;
+
+    public delegate void OnCurrentVoltaObjectsChange(int value);
+    public static OnCurrentVoltaObjectsChange onCurrentVoltaObjChange;
 
     private bool playerHasObject;
 
@@ -90,13 +97,21 @@ public class LevelStateController : MonoBehaviour
         if (gameState == State.Revirando && isVoltaRequired)
         {
             gameState = State.Voltando;
-            onStateChange?.Invoke(gameState);
+
             SetVoltaTotalObjects();
+
+            onStateChange?.Invoke(gameState);
+            
             if(voltaTotalObjects == 0)
             {
                 gameState = State.End;
                 onStateChange?.Invoke(gameState);
             }
+            else
+            {
+                onVoltaTotalObjReady?.Invoke(voltaTotalObjects);
+            }
+
 
 
         }
@@ -117,15 +132,24 @@ public class LevelStateController : MonoBehaviour
 
     private void SetVoltaTotalObjects()
     {
-        List<GameObject> selectableObjects = GetSelectableObjects();
-        foreach(GameObject selectable in selectableObjects)
+
+        //voltaTotalObjects = GameObject.FindGameObjectsWithTag("Sil").Length;
+
+        List<SelectableObjectController> selectableObjects = GetSelectableObjects();
+        foreach (SelectableObjectController selectable in selectableObjects)
         {
-            var selectableController = selectable.GetComponent<SelectableObjectController>();
-            if (selectableController != null)
+            if (selectable != null)
             {
-                if (selectableController.HasSilhouette())
+                if (selectable.HasSilhouette())
                 {
+
+                    //Debug.LogWarning(selectable.gameObject.name + " HAS A SILHOUETE");
                     voltaTotalObjects++;
+                }
+                else
+                {
+                    //Debug.LogError(selectable.gameObject.name + " DOES NOT HAVE A SILHOUETE");
+
                 }
             }
         }
@@ -134,9 +158,10 @@ public class LevelStateController : MonoBehaviour
     private void OnVoltaObject()
     {
         currentVoltaObjects++;
+        onCurrentVoltaObjChange?.Invoke(currentVoltaObjects);
 
-        if (currentVoltaObjects < voltaTotalObjects)
-            return;
+        if (currentVoltaObjects < voltaTotalObjects)            
+            return;         
 
         if (gameState == State.Voltando)
         {
@@ -146,35 +171,27 @@ public class LevelStateController : MonoBehaviour
 
     }
 
-    private static List<GameObject> GetObjectsInLayer(GameObject root, int layer)
+    private static List<SelectableObjectController> GetSelectableObjects()
     {
-        var ret = new List<GameObject>();
-        foreach (Transform t in root.transform.GetComponentsInChildren(typeof(GameObject), true))
-        {
-            if (t.gameObject.layer == layer)
-            {
-                ret.Add(t.gameObject);
-            }
-        }
-        return ret;
-    }
 
-    private static List<GameObject> GetSelectableObjects()
-    {
-        var goArray = FindObjectsOfType(typeof(GameObject)) as GameObject[];
-        var goList = new System.Collections.Generic.List<GameObject>();
-        for (int i = 0; i < goArray.Length; i++)
-        {
-            if (goArray[i].layer == 3)
-            {
-                goList.Add(goArray[i]);
-            }
-        }
-        if (goList.Count == 0)
-        {
-            return null;
-        }
-        return goList;
+        var comp = GameObject.FindObjectsOfType<SelectableObjectController>(includeInactive:false).ToList();
+
+        return comp;
+
+        //var goArray = FindObjectsOfType(typeof(GameObject)) as GameObject[];
+        //var goList = new System.Collections.Generic.List<GameObject>();
+        //for (int i = 0; i < goArray.Length; i++)
+        //{
+        //    if (goArray[i].layer == 3)
+        //    {
+        //        goList.Add(goArray[i]);
+        //    }
+        //}
+        //if (goList.Count == 0)
+        //{
+        //    return null;
+        //}
+        //return goList;
     }
 
 }
