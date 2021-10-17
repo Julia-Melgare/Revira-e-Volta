@@ -80,21 +80,40 @@ public class SelectableObjectController : MonoBehaviour
 
         silhouette.gameObject.layer = 0;
 
-
         Destroy(silhouette.GetComponent<Rigidbody>());
         Destroy(silhouette.GetComponent<Collider>());
         Destroy(silhouette.GetComponent<SelectableObjectController>());
 
+        silhouette.GetComponent<MeshRenderer>().material = silhouetteMaterial;
+
+        //Color color = gameObject.GetComponent<MeshRenderer>().material.color;
+
+        //var newColor = new Color(color.r, color.g, color.b, 0.35f);
+
+        //silhouette.GetComponent<MeshRenderer>().material.SetColor("_BaseColor", newColor);
+
+
+        for (int i = 0; i < silhouette.transform.childCount; i++)
+        {
+            var child = silhouette.transform.GetChild(i);
+
+            var collider = child.GetComponent<Collider>();
+            var renderer = child.GetComponent<Renderer>();
+
+            if(collider)
+                Destroy(collider);
+            if (renderer)
+                renderer.material = silhouetteMaterial;
+
+        }
+
+
         var silhouetteCollider = silhouette.AddComponent<BoxCollider>();
         silhouetteCollider.isTrigger = true;
         silhouetteCollider.size = silhouetteCollider.size * 2;
-        silhouette.GetComponent<MeshRenderer>().material = silhouetteMaterial;
+        
 
-        Color color = gameObject.GetComponent<MeshRenderer>().material.color;
-       
-        var newColor = new Color(color.r, color.g, color.b, 0.35f);
 
-        silhouette.GetComponent<MeshRenderer>().material.SetColor("_BaseColor", newColor);
 
 
         var placeObjectScript = silhouette.AddComponent<PlaceObject>();
