@@ -29,6 +29,11 @@ public class GraberController : MonoBehaviour
         PlaceObject.onGrabEnd += GrabEnd;
     }
 
+    private void OnDisable()
+    {
+        PlaceObject.onGrabEnd -= GrabEnd;
+    }
+
     private void Awake()
     {
         MainCamera = Camera.main;
