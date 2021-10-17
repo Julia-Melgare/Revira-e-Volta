@@ -6,15 +6,24 @@ public class GameCanvasController : MonoBehaviour
 {
     [SerializeField] private GameObject WinScreen;
     [SerializeField] private GameObject LoseScreen;
+    [SerializeField] private GameObject BigInstructions;
+    [SerializeField] private GameObject SmallInstructions;
+
+    private void Start()
+    {
+        StartCoroutine(ShowBigInstructions());
+    }
 
     private void OnEnable()
     {
         LevelStateController.onGameWin += CheckWin;
+        LevelStateController.onStateChange += StateChange;
     }
 
     private void OnDisable()
     {
         LevelStateController.onGameWin -= CheckWin;
+        LevelStateController.onStateChange -= StateChange;
     }
 
     private void CheckWin(bool win)
@@ -27,5 +36,19 @@ public class GameCanvasController : MonoBehaviour
         {
             LoseScreen.SetActive(true);
         }
+    }
+
+    private void StateChange(LevelStateController.State state)
+    {
+        SmallInstructions.SetActive(false);
+        BigInstructions.SetActive(true);
+        StartCoroutine(ShowBigInstructions());
+    }
+
+    IEnumerator ShowBigInstructions()
+    {
+        yield return new WaitForSeconds(5f);
+        BigInstructions.SetActive(false);
+        SmallInstructions.SetActive(true);
     }
 }
