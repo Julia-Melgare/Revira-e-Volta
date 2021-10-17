@@ -84,6 +84,13 @@ public class LevelStateController : MonoBehaviour
         {
             gameState = State.Voltando;
             onStateChange?.Invoke(gameState);
+            SetVoltaTotalObjects();
+            if(voltaTotalObjects == 0)
+            {
+                gameState = State.End;
+                onStateChange?.Invoke(gameState);
+            }
+
 
         }
         else if (gameState == State.Revirando && !isVoltaRequired)
@@ -99,6 +106,22 @@ public class LevelStateController : MonoBehaviour
             onStateChange?.Invoke(gameState);
         }
 
+    }
+
+    private void SetVoltaTotalObjects()
+    {
+        List<GameObject> selectableObjects = GetSelectableObjects();
+        foreach(GameObject selectable in selectableObjects)
+        {
+            var selectableController = selectable.GetComponent<SelectableObjectController>();
+            if (selectableController != null)
+            {
+                if (selectableController.HasSilhouette())
+                {
+                    voltaTotalObjects++;
+                }
+            }
+        }
     }
 
     private void OnVoltaObject()
@@ -129,5 +152,22 @@ public class LevelStateController : MonoBehaviour
         return ret;
     }
 
+    private static List<GameObject> GetSelectableObjects()
+    {
+        var goArray = FindObjectsOfType(typeof(GameObject)) as GameObject[];
+        var goList = new System.Collections.Generic.List<GameObject>();
+        for (int i = 0; i < goArray.Length; i++)
+        {
+            if (goArray[i].layer == 3)
+            {
+                goList.Add(goArray[i]);
+            }
+        }
+        if (goList.Count == 0)
+        {
+            return null;
+        }
+        return goList;
+    }
 
 }

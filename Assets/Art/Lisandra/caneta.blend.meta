@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: c42c7a24a96b5d54ea56408176dad7a6
+guid: d366c8ddccbc0444599319d981f9de9f
 ModelImporter:
   serializedVersion: 21100
   internalIDToNameTable: []
@@ -7,8 +7,18 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Ouro
-    second: {fileID: 2100000, guid: d0480cb50974cd241bf34e8765f884c6, type: 2}
+      name: Corpo
+    second: {fileID: 2100000, guid: 3a534f2e955f0e946aba78c811785a5b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Metal
+    second: {fileID: 2100000, guid: 274da830e5353b0479f589e42a74c2f7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Partes
+    second: {fileID: 2100000, guid: bf7fcf11eade5624bada1bb2bcbf9b20, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -50,7 +60,7 @@ ModelImporter:
     importLights: 1
     fileIdsGeneration: 2
     swapUVChannels: 0
-    generateSecondaryUV: 1
+    generateSecondaryUV: 0
     useFileUnits: 1
     keepQuads: 0
     weldVertices: 1

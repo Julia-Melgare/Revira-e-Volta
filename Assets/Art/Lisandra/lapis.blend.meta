@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: c42c7a24a96b5d54ea56408176dad7a6
+guid: dd0cf22cd9b6a124fb015e13f6c254d0
 ModelImporter:
   serializedVersion: 21100
   internalIDToNameTable: []
@@ -7,8 +7,33 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Ouro
-    second: {fileID: 2100000, guid: d0480cb50974cd241bf34e8765f884c6, type: 2}
+      name: Borracha
+    second: {fileID: 2100000, guid: c0d6dddb2b221694084112299163d7d2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Grafite
+    second: {fileID: 2100000, guid: f851163ef9eceff48ad949bbf33c8600, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: "L\xE1pis"
+    second: {fileID: 2100000, guid: a38b9f03cb1fb8546ba7f0ec01d3ca9d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: "L\xE1pis.001"
+    second: {fileID: 2100000, guid: c52eb15f74049904a8686229bc4f10f9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Madeira
+    second: {fileID: 2100000, guid: 0d1ddf214145ac642a76d21d0023c9f9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Metal
+    second: {fileID: 2100000, guid: 274da830e5353b0479f589e42a74c2f7, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -50,7 +75,7 @@ ModelImporter:
     importLights: 1
     fileIdsGeneration: 2
     swapUVChannels: 0
-    generateSecondaryUV: 1
+    generateSecondaryUV: 0
     useFileUnits: 1
     keepQuads: 0
     weldVertices: 1
