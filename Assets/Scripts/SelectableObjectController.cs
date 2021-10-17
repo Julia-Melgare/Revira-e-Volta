@@ -57,4 +57,9 @@ public class SelectableObjectController : MonoBehaviour
         var placeObjectScript = silhouette.AddComponent<PlaceObject>();
         placeObjectScript.setOriginalObject(this.gameObject);
     }
+
+    public bool HasSilhouette()
+    {
+        return silhouette != null;
+    }
 }

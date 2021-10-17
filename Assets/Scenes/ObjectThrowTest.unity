@@ -1946,7 +1946,7 @@ MonoBehaviour:
   isVoltaRequired: 1
   isReviraRequired: 0
   gameState: 1
-  voltaTotalObjects: 2
+  voltaTotalObjects: 0
   currentVoltaObjects: 0
   Score: 0
   Time: 60
