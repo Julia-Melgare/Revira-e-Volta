@@ -12,8 +12,10 @@ public class SelectableObjectController : MonoBehaviour
 
     private float distanceThreashold = 0.1f;
 
-
     private bool createdSilhouette = false;
+
+    public delegate void OnObjectCollision(Collision other);
+    public static OnObjectCollision onObjectCollision;
 
     private void OnDisable()
     {
@@ -48,11 +50,8 @@ public class SelectableObjectController : MonoBehaviour
             SpawnSilhouette();
             createdSilhouette = true;
             yield break;
-        }
-
-     
-
-
+        }   
+        
         yield return CheckSpawnSilhouette();
 
     }
@@ -74,20 +73,11 @@ public class SelectableObjectController : MonoBehaviour
             }
     }
 
-    //private void CheckSelected(GameObject selected)
-    //{
-    //    if(selected == this.gameObject && silhouette == null)
-    //    {
-    //        SpawnSilhouette();
-    //    }
-    //}
-
     private void SpawnSilhouette()
     {
         silhouette = Instantiate(gameObject);
 
         //silhouette.transform.SetParent(transform.parent);
-
 
         silhouette.transform.position = originalPosition;
         silhouette.transform.rotation = originalRotation;
@@ -98,14 +88,13 @@ public class SelectableObjectController : MonoBehaviour
         Destroy(silhouette.GetComponent<Collider>());
         Destroy(silhouette.GetComponent<SelectableObjectController>());
 
-        silhouette.GetComponent<MeshRenderer>().material = silhouetteMaterial;
-
-        //Color color = gameObject.GetComponent<MeshRenderer>().material.color;
-
-        //var newColor = new Color(color.r, color.g, color.b, 0.35f);
-
-        //silhouette.GetComponent<MeshRenderer>().material.SetColor("_BaseColor", newColor);
-
+        var silhouetteRender = silhouette.GetComponent<MeshRenderer>();
+        var silhouetteMats = new Material[silhouetteRender.materials.Length];
+        for (int j = 0; j < silhouetteRender.materials.Length; j++)
+        {
+            silhouetteMats[j] = silhouetteMaterial;
+        }
+        silhouetteRender.materials = silhouetteMats;
 
         for (int i = 0; i < silhouette.transform.childCount; i++)
         {
@@ -117,8 +106,14 @@ public class SelectableObjectController : MonoBehaviour
             if(collider)
                 Destroy(collider);
             if (renderer)
-                renderer.material = silhouetteMaterial;
-
+            {
+                var mats = new Material[renderer.materials.Length];
+                for (int j = 0; j < renderer.materials.Length; j++)
+                {
+                    mats[j] = silhouetteMaterial;
+                }
+                renderer.materials = mats;
+            }
         }
 
         var silhouetteCollider = silhouette.AddComponent<BoxCollider>();
@@ -136,5 +131,11 @@ public class SelectableObjectController : MonoBehaviour
     public bool HasSilhouette()
     {
         return createdSilhouette;
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        onObjectCollision?.Invoke(collision);
+        Debug.Log(collision.gameObject.name);
     }
 }

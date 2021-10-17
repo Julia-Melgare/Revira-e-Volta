@@ -15,10 +15,10 @@ public class MultiSceneManager : MonoBehaviour
         RestartLevel.onRestartLevel += OnRestart;
     }
 
-    private void OnDisable()
+    /*private void OnDisable()
     {
         RestartLevel.onRestartLevel -= OnRestart;
-    }
+    }*/
 
     void Start()
     {
