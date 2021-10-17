@@ -5,7 +5,8 @@ using UnityEngine.InputSystem;
 
 public class GraberController : MonoBehaviour
 {
-
+    public delegate void OnGrabGoal();
+    public static OnGrabGoal onGrabGoal;
 
     [SerializeField] private float DragForce = 1f;
     [SerializeField] private float DampAmount = 1f;
@@ -53,6 +54,12 @@ public class GraberController : MonoBehaviour
             {
                 selected = hit.rigidbody;
 
+                if(hit.collider.tag == "Goal")
+                {
+                    onGrabGoal?.Invoke();
+                    return;
+                }
+
                 Vector3 camToSelected = selected.transform.position - MainCamera.transform.position;
                 selectedMagnitude = camToSelected.magnitude;
 
@@ -66,7 +73,8 @@ public class GraberController : MonoBehaviour
         {
             //selected.GetComponent<Renderer>().material.color = Color.white;
             selected = null;
-            Destroy(joint.gameObject);
+            if (joint)
+                Destroy(joint.gameObject);
         }
 
 

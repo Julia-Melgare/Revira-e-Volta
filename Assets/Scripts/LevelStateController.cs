@@ -19,6 +19,9 @@ public class LevelStateController : MonoBehaviour
     public delegate void OnSetTimer(float totalTime);
     public static OnSetTimer onSetTimer;
 
+    public delegate void OnGameWin(bool win);
+    public static OnGameWin onGameWin;
+
     private bool playerHasObject;
 
     [SerializeField] private bool isVoltaRequired;
@@ -44,19 +47,22 @@ public class LevelStateController : MonoBehaviour
     private void Update()
     {
         timeRemaining -= UnityEngine.Time.deltaTime;
-        //TODO: gameover
+        if(timeRemaining <= 0)
+        {
+            onGameWin?.Invoke(false);
+        }
     }
 
     void OnEnable()
     {
-        GoalObjectController.onGrabGoal += GrabGoal;
+        GraberController.onGrabGoal += GrabGoal;
         ExitPoint.playerExit += PlayerTryExit;
         PlaceObject.onGrabEnd += OnVoltaObject;
     }
 
     private void OnDisable()
     {
-        GoalObjectController.onGrabGoal -= GrabGoal;
+        GraberController.onGrabGoal -= GrabGoal;
         ExitPoint.playerExit -= PlayerTryExit;
         PlaceObject.onGrabEnd -= OnVoltaObject;
     }
@@ -68,6 +74,7 @@ public class LevelStateController : MonoBehaviour
         {
             //END LEVEL
             Debug.Log("LEVEL END");
+            onGameWin?.Invoke(true);
 
         }
         else
