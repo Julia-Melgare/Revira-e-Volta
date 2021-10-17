@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3256612624833214962}
   - component: {fileID: 3256612624833214963}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Col01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -54,7 +54,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3256612625543048759}
   - component: {fileID: 3256612625543048752}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Col01 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -98,7 +98,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3256612626187332272}
   - component: {fileID: 3256612626187332273}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Col01 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -142,7 +142,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3256612626436730804}
   - component: {fileID: 3256612626436730805}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Col01 (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -190,7 +190,7 @@ GameObject:
   - component: {fileID: 3256612626085796974}
   - component: {fileID: 2615095150640743816}
   - component: {fileID: -3860050553580730980}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Drawer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
