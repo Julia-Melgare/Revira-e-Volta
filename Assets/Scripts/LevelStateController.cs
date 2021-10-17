@@ -51,6 +51,14 @@ public class LevelStateController : MonoBehaviour
     {
         GoalObjectController.onGrabGoal += GrabGoal;
         ExitPoint.playerExit += PlayerTryExit;
+        PlaceObject.onGrabEnd += OnVoltaObject;
+    }
+
+    private void OnDisable()
+    {
+        GoalObjectController.onGrabGoal -= GrabGoal;
+        ExitPoint.playerExit -= PlayerTryExit;
+        PlaceObject.onGrabEnd -= OnVoltaObject;
     }
 
     private void PlayerTryExit()
@@ -60,7 +68,7 @@ public class LevelStateController : MonoBehaviour
         {
             //END LEVEL
             Debug.Log("LEVEL END");
-            
+
         }
         else
         {
@@ -76,6 +84,7 @@ public class LevelStateController : MonoBehaviour
         {
             gameState = State.Voltando;
             onStateChange?.Invoke(gameState);
+
         }
         else if (gameState == State.Revirando && !isVoltaRequired)
         {
@@ -99,13 +108,26 @@ public class LevelStateController : MonoBehaviour
         if (currentVoltaObjects < voltaTotalObjects)
             return;
 
-        if(gameState == State.Voltando)
+        if (gameState == State.Voltando)
         {
             gameState = State.End;
             onStateChange?.Invoke(gameState);
         }
-        
+
     }
 
- 
+    private static List<GameObject> GetObjectsInLayer(GameObject root, int layer)
+    {
+        var ret = new List<GameObject>();
+        foreach (Transform t in root.transform.GetComponentsInChildren(typeof(GameObject), true))
+        {
+            if (t.gameObject.layer == layer)
+            {
+                ret.Add(t.gameObject);
+            }
+        }
+        return ret;
+    }
+
+
 }
