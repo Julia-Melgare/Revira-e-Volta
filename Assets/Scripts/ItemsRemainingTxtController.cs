@@ -14,6 +14,12 @@ public class ItemsRemainingTxtController : MonoBehaviour
         LevelStateController.onCurrentVoltaObjChange += UpdateCurrentVoltaObjects;
     }
 
+    private void OnDisable()
+    {
+        LevelStateController.onVoltaTotalObjReady -= GetVoltaTotalObjects;
+        LevelStateController.onCurrentVoltaObjChange -= UpdateCurrentVoltaObjects;
+    }
+
     private void GetVoltaTotalObjects(int value)
     {
         voltaTotalObjects = value;

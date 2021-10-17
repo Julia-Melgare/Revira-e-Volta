@@ -5,11 +5,16 @@ using UnityEngine;
 public class InstructionsTxtController : MonoBehaviour
 {
     [SerializeField] private List<GameObject> instructionsTexts;
-    private GameObject currentInstructions;
+    [SerializeField] private GameObject currentInstructions;
 
     private void OnEnable()
     {
         LevelStateController.onStateChange += StateChange;
+    }
+
+    private void OnDisable()
+    {
+        LevelStateController.onStateChange -= StateChange;
     }
 
     private void Start()
