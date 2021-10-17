@@ -189,6 +189,7 @@ GameObject:
   - component: {fileID: 3622060827286288737}
   - component: {fileID: 3256612626085796974}
   - component: {fileID: 2615095150640743816}
+  - component: {fileID: -3860050553580730980}
   m_Layer: 0
   m_Name: Drawer
   m_TagString: Untagged
@@ -294,3 +295,16 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &-3860050553580730980
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7027412013079438695}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ea65dd5d9ef35146969b2c67d648207, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  silhouetteMaterial: {fileID: 2100000, guid: c4a56a310a02db8479c8ac5817e21917, type: 2}

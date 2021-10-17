@@ -12,7 +12,9 @@ GameObject:
   - component: {fileID: 6478987528737151511}
   - component: {fileID: 9082928794032975581}
   - component: {fileID: 7623642252839732855}
-  m_Layer: 0
+  - component: {fileID: 919132149134697500}
+  - component: {fileID: 349592487295139124}
+  m_Layer: 3
   m_Name: computerKeyboard
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -26,7 +28,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7281748771253194504}
-  m_LocalRotation: {x: -0, y: 0.7428126, z: -0, w: 0.66949946}
+  m_LocalRotation: {x: 0, y: 0.74281186, z: 0, w: 0.66950023}
   m_LocalPosition: {x: 8.4524, y: 2.8683, z: -2.86579}
   m_LocalScale: {x: 0.62044144, y: 0.62044144, z: 0.62044144}
   m_Children: []
@@ -98,3 +100,32 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -1478280682320079162, guid: eea9204fe4cedc943a7194b7efeaf070, type: 3}
+--- !u!54 &919132149134697500
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7281748771253194504}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!114 &349592487295139124
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7281748771253194504}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ea65dd5d9ef35146969b2c67d648207, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  silhouetteMaterial: {fileID: 2100000, guid: c4a56a310a02db8479c8ac5817e21917, type: 2}

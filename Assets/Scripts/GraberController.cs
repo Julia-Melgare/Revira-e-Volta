@@ -57,6 +57,7 @@ public class GraberController : MonoBehaviour
                 if(hit.collider.tag == "Goal")
                 {
                     onGrabGoal?.Invoke();
+                    Destroy(hit.collider.gameObject);
                     return;
                 }
 

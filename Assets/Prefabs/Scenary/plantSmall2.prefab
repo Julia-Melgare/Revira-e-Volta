@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 8883536672564680794}
   - component: {fileID: 8883536672564680797}
   - component: {fileID: 8883536672564680795}
+  - component: {fileID: 919132148065084129}
   m_Layer: 3
   m_Name: plantSmall2
   m_TagString: Untagged
@@ -28,7 +29,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8613627250689150206}
-  m_LocalRotation: {x: -0, y: 0.6865589, z: -0, w: -0.72707427}
+  m_LocalRotation: {x: 0, y: 0.68656117, z: -0, w: -0.72707206}
   m_LocalPosition: {x: 9.8349, y: 2.8683, z: -5.79779}
   m_LocalScale: {x: 0.31022072, y: 0.31022072, z: 0.31022072}
   m_Children: []
@@ -129,3 +130,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   silhouetteMaterial: {fileID: 2100000, guid: c4a56a310a02db8479c8ac5817e21917, type: 2}
+--- !u!114 &919132148065084129
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8613627250689150206}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ea65dd5d9ef35146969b2c67d648207, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  silhouetteMaterial: {fileID: 0}
