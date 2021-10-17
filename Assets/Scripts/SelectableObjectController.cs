@@ -60,6 +60,11 @@ public class SelectableObjectController : MonoBehaviour
             {
                 GetComponent<Rigidbody>().isKinematic = true;
                 gameObject.layer = 0;
+                for (int i = 0; i < gameObject.transform.childCount; i++)
+                {
+                    var child = gameObject.transform.GetChild(i);
+                    child.gameObject.layer = 0;
+                }
             }
     }
 
@@ -107,15 +112,10 @@ public class SelectableObjectController : MonoBehaviour
 
         }
 
-
         var silhouetteCollider = silhouette.AddComponent<BoxCollider>();
         silhouetteCollider.isTrigger = true;
-        silhouetteCollider.size = silhouetteCollider.size * 2;
-        
-
-
-
-
+        silhouetteCollider.size = silhouetteCollider.size * 2;   
+                     
         var placeObjectScript = silhouette.AddComponent<PlaceObject>();
         placeObjectScript.setOriginalObject(this.gameObject);
 
