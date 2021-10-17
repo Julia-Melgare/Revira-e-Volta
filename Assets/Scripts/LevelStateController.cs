@@ -22,6 +22,12 @@ public class LevelStateController : MonoBehaviour
     public delegate void OnGameWin(bool win);
     public static OnGameWin onGameWin;
 
+    public delegate void OnVoltaTotalObjectsReady(int value);
+    public static OnVoltaTotalObjectsReady onVoltaTotalObjReady;
+
+    public delegate void OnCurrentVoltaObjectsChange(int value);
+    public static OnCurrentVoltaObjectsChange onCurrentVoltaObjChange;
+
     private bool playerHasObject;
 
     [SerializeField] private bool isVoltaRequired;
@@ -97,6 +103,10 @@ public class LevelStateController : MonoBehaviour
                 gameState = State.End;
                 onStateChange?.Invoke(gameState);
             }
+            else
+            {
+                onVoltaTotalObjReady?.Invoke(voltaTotalObjects);
+            }
 
 
         }
@@ -134,9 +144,10 @@ public class LevelStateController : MonoBehaviour
     private void OnVoltaObject()
     {
         currentVoltaObjects++;
+        onCurrentVoltaObjChange?.Invoke(currentVoltaObjects);
 
-        if (currentVoltaObjects < voltaTotalObjects)
-            return;
+        if (currentVoltaObjects < voltaTotalObjects)            
+            return;         
 
         if (gameState == State.Voltando)
         {
