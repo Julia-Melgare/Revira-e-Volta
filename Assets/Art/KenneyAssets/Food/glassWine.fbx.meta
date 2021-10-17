@@ -3,7 +3,17 @@ guid: f3deddeef1aed834c983390f5ce985e6
 ModelImporter:
   serializedVersion: 21100
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: '[Translucent_Glass_Gray]'
+    second: {fileID: 2100000, guid: 5bae25c61033db24dbe1a9b0ebfb77da, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: _defaultMat
+    second: {fileID: 2100000, guid: 22a72afa88c91534683259285f78cae3, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

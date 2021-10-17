@@ -14598,31 +14598,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: kitchenFridge
       objectReference: {fileID: 0}
-    - target: {fileID: 2402708669721493925, guid: 34aa747b55164ea4eafe6a93e2d35ecf,
-        type: 3}
-      propertyPath: m_ConnectedAnchor.x
-      value: 0.03238046
-      objectReference: {fileID: 0}
-    - target: {fileID: 2402708669721493925, guid: 34aa747b55164ea4eafe6a93e2d35ecf,
-        type: 3}
-      propertyPath: m_ConnectedAnchor.y
-      value: -0.06426164
-      objectReference: {fileID: 0}
-    - target: {fileID: 2402708669721493925, guid: 34aa747b55164ea4eafe6a93e2d35ecf,
-        type: 3}
-      propertyPath: m_ConnectedAnchor.z
-      value: -0.24983294
-      objectReference: {fileID: 0}
-    - target: {fileID: 5458836283709658569, guid: 34aa747b55164ea4eafe6a93e2d35ecf,
-        type: 3}
-      propertyPath: m_ConnectedAnchor.x
-      value: 0.10155812
-      objectReference: {fileID: 0}
-    - target: {fileID: 5458836283709658569, guid: 34aa747b55164ea4eafe6a93e2d35ecf,
-        type: 3}
-      propertyPath: m_ConnectedAnchor.z
-      value: -0.24999996
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 34aa747b55164ea4eafe6a93e2d35ecf, type: 3}
 --- !u!1001 &229014630768931137
@@ -14691,11 +14666,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: kitchenCabinetCornerInner
-      objectReference: {fileID: 0}
-    - target: {fileID: 1147562786161399870, guid: d42130e0f3c7cea48b1553e09c4e073f,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d42130e0f3c7cea48b1553e09c4e073f, type: 3}
@@ -15378,21 +15348,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 919132147644695749, guid: f2fd7ae9e7e3d8f448b4c9b617b8dccc,
-        type: 3}
-      propertyPath: m_Anchor.z
-      value: 0.19
-      objectReference: {fileID: 0}
-    - target: {fileID: 919132147644695749, guid: f2fd7ae9e7e3d8f448b4c9b617b8dccc,
-        type: 3}
-      propertyPath: m_ConnectedAnchor.x
-      value: 0.031558216
-      objectReference: {fileID: 0}
-    - target: {fileID: 919132147644695749, guid: f2fd7ae9e7e3d8f448b4c9b617b8dccc,
-        type: 3}
-      propertyPath: m_ConnectedAnchor.z
-      value: -0.11000027
-      objectReference: {fileID: 0}
     - target: {fileID: 2754125506607132666, guid: f2fd7ae9e7e3d8f448b4c9b617b8dccc,
         type: 3}
       propertyPath: m_Name
@@ -16032,11 +15987,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 919132149338484480, guid: 2bb5d6fb54975ff4bb2d36f8ae2b6dd8,
-        type: 3}
-      propertyPath: m_Limits.min
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 5135139838044493537, guid: 2bb5d6fb54975ff4bb2d36f8ae2b6dd8,
         type: 3}
       propertyPath: m_Name
@@ -16174,21 +16124,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 919132148312978972, guid: 729e854453945db41959364ccc47200c,
-        type: 3}
-      propertyPath: m_Anchor.z
-      value: 0.22
-      objectReference: {fileID: 0}
-    - target: {fileID: 919132148312978972, guid: 729e854453945db41959364ccc47200c,
-        type: 3}
-      propertyPath: m_ConnectedAnchor.x
-      value: 0.031558216
-      objectReference: {fileID: 0}
-    - target: {fileID: 919132148312978972, guid: 729e854453945db41959364ccc47200c,
-        type: 3}
-      propertyPath: m_ConnectedAnchor.z
-      value: -0.07999934
-      objectReference: {fileID: 0}
     - target: {fileID: 4695025404805603997, guid: 729e854453945db41959364ccc47200c,
         type: 3}
       propertyPath: m_Name
