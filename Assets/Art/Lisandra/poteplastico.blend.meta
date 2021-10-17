@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 3c9c4334019fe0b42a8de8cd15be4868
+guid: 03c74f86ec6be414a87eaaaa07ec7ffd
 ModelImporter:
   serializedVersion: 21100
   internalIDToNameTable: []
@@ -7,8 +7,13 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Pedra.001
-    second: {fileID: 2100000, guid: d525188e0f1eebd43a8823e2f01ab6a6, type: 2}
+      name: Plastico
+    second: {fileID: 2100000, guid: 74764a40404a60a4582ef64faba03847, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: PlasticoCor
+    second: {fileID: 2100000, guid: 3cd09655d185c8a49bd29def6f515afa, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -50,7 +55,7 @@ ModelImporter:
     importLights: 1
     fileIdsGeneration: 2
     swapUVChannels: 0
-    generateSecondaryUV: 1
+    generateSecondaryUV: 0
     useFileUnits: 1
     keepQuads: 0
     weldVertices: 1
@@ -62,7 +67,7 @@ ModelImporter:
     meshOptimizationFlags: -1
     indexFormat: 0
     secondaryUVAngleDistortion: 8
-    secondaryUVAreaDistortion: 20
+    secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
     secondaryUVMarginMethod: 1
     secondaryUVMinLightmapResolution: 40
