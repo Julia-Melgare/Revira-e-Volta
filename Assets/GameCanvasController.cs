@@ -8,6 +8,7 @@ public class GameCanvasController : MonoBehaviour
     [SerializeField] private GameObject LoseScreen;
     [SerializeField] private GameObject BigInstructions;
     [SerializeField] private GameObject SmallInstructions;
+    [SerializeField] private GameObject VoltaItemsRemaining;
 
     private void Start()
     {
@@ -43,6 +44,13 @@ public class GameCanvasController : MonoBehaviour
         SmallInstructions.SetActive(false);
         BigInstructions.SetActive(true);
         StartCoroutine(ShowBigInstructions());
+        if(state == LevelStateController.State.Voltando)
+        {
+            VoltaItemsRemaining.SetActive(true);
+        }else if(state == LevelStateController.State.End)
+        {
+            VoltaItemsRemaining.SetActive(false);
+        }
     }
 
     IEnumerator ShowBigInstructions()
