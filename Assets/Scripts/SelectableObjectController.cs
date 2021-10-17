@@ -12,15 +12,18 @@ public class SelectableObjectController : MonoBehaviour
 
     private float distanceThreashold = 0.1f;
 
+
+    private bool createdSilhouette = false;
+
     private void OnDisable()
     {
-        GraberController.onGrabObject -= CheckSelected;
+        //GraberController.onGrabObject -= CheckSelected;
         LevelStateController.onStateChange -= StateChange;
     }
 
     private void OnEnable()
     {
-        GraberController.onGrabObject += CheckSelected;
+        //GraberController.onGrabObject += CheckSelected;
         LevelStateController.onStateChange += StateChange;
 
     }
@@ -43,6 +46,8 @@ public class SelectableObjectController : MonoBehaviour
         if (dist > distanceThreashold)
         {
             SpawnSilhouette();
+            createdSilhouette = true;
+            yield break;
         }
 
      
@@ -69,19 +74,19 @@ public class SelectableObjectController : MonoBehaviour
             }
     }
 
-    private void CheckSelected(GameObject selected)
-    {
-        if(selected == this.gameObject && silhouette == null)
-        {
-            SpawnSilhouette();
-        }
-    }
+    //private void CheckSelected(GameObject selected)
+    //{
+    //    if(selected == this.gameObject && silhouette == null)
+    //    {
+    //        SpawnSilhouette();
+    //    }
+    //}
 
     private void SpawnSilhouette()
     {
-        silhouette = Object.Instantiate(this.gameObject);
+        silhouette = Instantiate(gameObject);
 
-        silhouette.transform.SetParent(transform.parent);
+        //silhouette.transform.SetParent(transform.parent);
 
 
         silhouette.transform.position = originalPosition;
@@ -121,14 +126,15 @@ public class SelectableObjectController : MonoBehaviour
         silhouetteCollider.size = silhouetteCollider.size * 2;   
                      
         var placeObjectScript = silhouette.AddComponent<PlaceObject>();
-        placeObjectScript.setOriginalObject(this.gameObject);
+        placeObjectScript.setOriginalObject(gameObject);
 
+        silhouette.tag = "Sil";
         silhouette.SetActive(false);
 
     }
 
     public bool HasSilhouette()
     {
-        return silhouette != null;
+        return createdSilhouette;
     }
 }

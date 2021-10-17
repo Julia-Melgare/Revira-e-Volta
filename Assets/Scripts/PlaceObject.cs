@@ -9,6 +9,7 @@ public class PlaceObject : MonoBehaviour
     public delegate void OnGrabEnd();
     public static OnGrabEnd onGrabEnd;
 
+    private bool checkedAlready = false;
 
     public void setOriginalObject(GameObject originalObject)
     {
@@ -17,6 +18,10 @@ public class PlaceObject : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+
+        if (checkedAlready)
+            return;
+
         if(other.gameObject == originalObject)
         {
             other.transform.position = gameObject.transform.position;
@@ -25,7 +30,19 @@ public class PlaceObject : MonoBehaviour
             other.attachedRigidbody.isKinematic = true;
             other.gameObject.layer = 0;
 
+
+            for (int i = 0; i < other.transform.childCount; i++)
+            {
+                var child = other.transform.GetChild(i);
+                child.gameObject.layer = 0;
+            }
+
+
+            //Debug.Log("ONGRAB END " + originalObject.name + " " + other.gameObject.name);
+            checkedAlready = true;
+
             onGrabEnd?.Invoke();
+
 
             Destroy(gameObject);
         }
