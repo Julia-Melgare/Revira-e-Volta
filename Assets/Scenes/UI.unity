@@ -624,6 +624,7 @@ MonoBehaviour:
   - {fileID: 1688076444}
   - {fileID: 1994120586}
   - {fileID: 1688211494}
+  currentInstructions: {fileID: 0}
 --- !u!114 &687725204
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1976,6 +1977,7 @@ GameObject:
   - component: {fileID: 1260009569}
   - component: {fileID: 1260009568}
   - component: {fileID: 1260009570}
+  - component: {fileID: 1260009571}
   m_Layer: 5
   m_Name: Instructions
   m_TagString: Untagged
@@ -2060,6 +2062,19 @@ MonoBehaviour:
   - {fileID: 688352090}
   - {fileID: 1815731495}
   - {fileID: 305112334}
+  currentInstructions: {fileID: 0}
+--- !u!225 &1260009571
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1260009566}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &1333748527
 GameObject:
   m_ObjectHideFlags: 0
