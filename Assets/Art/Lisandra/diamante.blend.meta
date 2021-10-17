@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 7d865740c0cb10447970b66b933782d3
+guid: 3c9c4334019fe0b42a8de8cd15be4868
 ModelImporter:
   serializedVersion: 21100
   internalIDToNameTable: []
@@ -7,28 +7,8 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Caixa
-    second: {fileID: 2100000, guid: 685164c4292c7104f8c120906a84a3fd, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Fechadura
-    second: {fileID: 2100000, guid: d0480cb50974cd241bf34e8765f884c6, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Pedra
-    second: {fileID: 2100000, guid: 5fe8c2761600e244387270246d791f68, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
       name: Pedra.001
-    second: {fileID: 2100000, guid: 38976cbde6328814e9e23fde2ae6be27, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Pedra.002
-    second: {fileID: 2100000, guid: b6a53fcfaf848f946951ad11b3e6c926, type: 2}
+    second: {fileID: 2100000, guid: 926728e20c3b31f4689a94d1c704ad7b, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
