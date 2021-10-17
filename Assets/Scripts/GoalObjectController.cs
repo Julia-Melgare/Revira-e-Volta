@@ -4,20 +4,55 @@ using UnityEngine;
 
 public class GoalObjectController : MonoBehaviour
 {
-    public delegate void OnGrabGoal();
-    public static OnGrabGoal onGrabGoal;
 
-    private void OnTriggerEnter(Collider other)
+    [SerializeField] private Camera camera;
+    [SerializeField] private float movementForce;
+    private bool isMovingTowardsCamera = false;
+    private Rigidbody rigidbody;
+
+    private void OnEnable()
     {
-        Debug.Log(other);
+        GraberController.onGrabGoal += GrabGoal;
+    }
 
+    private void OnDisable()
+    {
+        GraberController.onGrabGoal -= GrabGoal;
+    }
+
+    private void Start()
+    {
+        rigidbody = gameObject.GetComponent<Rigidbody>();
+    }
+
+    private void Update()
+    {
+        if (isMovingTowardsCamera)
+        {
+            rigidbody.AddForce(camera.transform.forward * movementForce * Time.deltaTime, ForceMode.VelocityChange);
+            Debug.Log(Vector3.Distance(gameObject.transform.position, camera.transform.forward));
+            if (Vector3.Distance(gameObject.transform.position, camera.transform.forward) <= 3f)
+            {
+                isMovingTowardsCamera = false;
+            }
+        }
+        
+    }
+
+    private void GrabGoal()
+    {
+        isMovingTowardsCamera = true;
+    }
+
+    /*private void OnTriggerEnter(Collider other)
+    {
         if (other.CompareTag("Player"))
         {
             onGrabGoal?.Invoke();
-            Destroy(gameObject);
+            StartCoroutine(moveTowardsCamera());            
+            //Destroy(gameObject);
         }
 
-    }
-
+    }*/
 
 }
