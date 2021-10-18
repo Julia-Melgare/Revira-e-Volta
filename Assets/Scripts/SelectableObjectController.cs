@@ -136,6 +136,6 @@ public class SelectableObjectController : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         onObjectCollision?.Invoke(collision);
-        Debug.Log(collision.gameObject.name);
+        //Debug.Log(collision.gameObject.name);
     }
 }

@@ -29,9 +29,17 @@ public class MultiSceneManager : MonoBehaviour
         yield return new WaitForSeconds(5f);
         sceneID++;
 
-        PlayerPrefs.SetInt("Level", sceneID);
+        //PlayerPrefs.SetInt("Level", sceneID);
 
-        LoadLevel(sceneID);
+        if(sceneID == 5)
+        {
+            LoadLevelNoUI(sceneID);
+        }
+        else
+        {
+            LoadLevel(sceneID);
+        }
+        
     }
     
 
@@ -43,6 +51,8 @@ public class MultiSceneManager : MonoBehaviour
     void Start()
     {
         Scene manager = SceneManager.GetSceneByName("SceneManager");
+
+        PlayerPrefs.DeleteAll();
 
         DontDestroyOnLoad(gameObject);
 
@@ -56,10 +66,6 @@ public class MultiSceneManager : MonoBehaviour
         Reload();
     }
 
-    void ReloadSelf()
-    {
-
-    }
 
     public void Reload()
     {
@@ -75,6 +81,20 @@ public class MultiSceneManager : MonoBehaviour
         SceneManager.LoadScene("Player", LoadSceneMode.Additive);
 
         SceneManager.LoadScene("UI", LoadSceneMode.Additive);
+
+
+
+
+    }
+
+
+    public void LoadLevelNoUI(int ID)
+    {
+
+        SceneManager.LoadScene(ID);
+
+        SceneManager.LoadScene("Player", LoadSceneMode.Additive);
+
 
 
 
