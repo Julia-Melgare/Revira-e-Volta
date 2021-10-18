@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 8408789290191618203}
   - component: {fileID: 7166230788690254944}
   - component: {fileID: 7166230788690254945}
+  - component: {fileID: 5589240862402879421}
   m_Layer: 0
   m_Name: cacetinho
   m_TagString: Untagged
@@ -27,13 +28,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8048769533014745422}
-  m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+  m_LocalRotation: {x: -0.7069834, y: 0, z: 0, w: 0.7072302}
   m_LocalPosition: {x: -0, y: 0, z: 0}
-  m_LocalScale: {x: 0.5940085, y: 1, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -89.98, y: 0, z: 0}
 --- !u!33 &6005253265609716817
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -114,3 +115,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   silhouetteMaterial: {fileID: 2100000, guid: c4a56a310a02db8479c8ac5817e21917, type: 2}
+--- !u!64 &5589240862402879421
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8048769533014745422}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -2351933556743011202, guid: 17fecba05a82429498c5a5ebcb286809, type: 3}

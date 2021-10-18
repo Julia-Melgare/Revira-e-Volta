@@ -12,13 +12,15 @@ public class ItemThumbController : MonoBehaviour
     void Start()
     {
         var active = SceneManager.GetActiveScene();
+        Debug.Log("BuildIndex: "+ active.buildIndex);
         switch (active.buildIndex)
         {
             case 3:
-                itemThumbCanvas.GetComponent<Image>().sprite = itemThumbs[3];
+                itemThumbCanvas.GetComponent<Image>().sprite = itemThumbs[0];
                 break;
             case 4:
-                itemThumbCanvas.GetComponent<Image>().sprite = itemThumbs[4];
+                Debug.Log("BuildIndex: " + active.buildIndex);
+                itemThumbCanvas.GetComponent<Image>().sprite = itemThumbs[1];
                 break;
         }
     }

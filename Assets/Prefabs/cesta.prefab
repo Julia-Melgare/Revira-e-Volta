@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 4806037850177807014}
   - component: {fileID: 2721352257954212761}
   - component: {fileID: 7881080356544054783}
+  - component: {fileID: 880833856}
   m_Layer: 0
   m_Name: cesta
   m_TagString: Untagged
@@ -27,13 +28,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6463375226376913779}
-  m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+  m_LocalRotation: {x: -0.7069834, y: 0, z: 0, w: 0.7072302}
   m_LocalPosition: {x: -18.86, y: 2.778, z: 2.95}
   m_LocalScale: {x: 0.3, y: 0.3, z: 0.2}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -89.98, y: 0, z: 0}
 --- !u!33 &7302180801095849580
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -113,3 +114,17 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!64 &880833856
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6463375226376913779}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4944428962089428701, guid: 61eb5c00ad9fa6543a9f89e5a9a1bd51, type: 3}
