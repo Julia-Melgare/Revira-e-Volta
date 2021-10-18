@@ -3,7 +3,27 @@ guid: 7ad81e1b943d4124f98f2967879d5149
 ModelImporter:
   serializedVersion: 21100
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Capa
+    second: {fileID: 2100000, guid: 1f4e291c16505a042917c3a11cd06e04, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Capa.001
+    second: {fileID: 2100000, guid: 9a612c188145ddc4eb4e5f5648f094da, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Capa.002
+    second: {fileID: 2100000, guid: 232b80b46fe0b2048be100dfb9ae2cfa, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Papel
+    second: {fileID: 2100000, guid: 5d74dbb6e23c00d46b477db062304905, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
