@@ -581,13 +581,14 @@ GameObject:
   - component: {fileID: 687725205}
   - component: {fileID: 687725204}
   - component: {fileID: 687725203}
+  - component: {fileID: 687725206}
   m_Layer: 5
   m_Name: InstructionsMini
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &687725202
 RectTransform:
   m_ObjectHideFlags: 0
@@ -666,6 +667,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 687725201}
   m_CullTransparentMesh: 1
+--- !u!225 &687725206
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 687725201}
+  m_Enabled: 1
+  m_Alpha: 0
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &688352090
 GameObject:
   m_ObjectHideFlags: 0

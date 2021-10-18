@@ -5,7 +5,7 @@ using UnityEngine.InputSystem;
 
 public class QuitGame : MonoBehaviour
 {
-    private void OnQuit(InputAction input)
+    private void OnQuit(InputValue input)
     {
         Application.Quit();
     }

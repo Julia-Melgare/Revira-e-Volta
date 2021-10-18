@@ -41,7 +41,7 @@ public class GameCanvasController : MonoBehaviour
 
     private void StateChange(LevelStateController.State state)
     {
-        SmallInstructions.SetActive(false);
+        SmallInstructions.GetComponent<CanvasGroup>().alpha = 0;
         BigInstructions.GetComponent<CanvasGroup>().alpha = 1;
         StartCoroutine(ShowBigInstructions());
         if(state == LevelStateController.State.Voltando)
@@ -57,6 +57,6 @@ public class GameCanvasController : MonoBehaviour
     {
         yield return new WaitForSeconds(5f);
         BigInstructions.GetComponent<CanvasGroup>().alpha = 0;
-        SmallInstructions.SetActive(true);
+        SmallInstructions.GetComponent<CanvasGroup>().alpha = 1;
     }
 }

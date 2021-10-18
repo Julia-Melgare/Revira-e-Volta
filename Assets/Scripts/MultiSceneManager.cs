@@ -80,7 +80,8 @@ public class MultiSceneManager : MonoBehaviour
 
         SceneManager.LoadScene("Player", LoadSceneMode.Additive);
 
-        SceneManager.LoadScene("UI", LoadSceneMode.Additive);
+        if(ID != 5)
+            SceneManager.LoadScene("UI", LoadSceneMode.Additive);
 
 
 
